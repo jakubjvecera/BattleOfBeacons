@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.WanderingTrader;
+import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.MerchantRecipe;
 import org.bukkit.potion.PotionEffect;
@@ -56,7 +57,7 @@ public class Trader implements CommandExecutor {
         MerchantRecipe trainingLeggins = new MerchantRecipe(specials.doWaterBucket(), 999);
         trainingLeggins.addIngredient(new ItemStack(Material.GOLD_INGOT, 6));
 
-        MerchantRecipe potionOfLeaping = new MerchantRecipe(specials.doPotionOfLeaping(player), 999);
+        MerchantRecipe potion = new MerchantRecipe(specials.doPotionOfLeaping(pla), 999);
         trainingLeggins.addIngredient(new ItemStack(Material.GOLD_INGOT, 6));
 
         trader.setRecipes(Lists.newArrayList

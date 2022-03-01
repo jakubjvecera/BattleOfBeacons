@@ -15,7 +15,9 @@ import org.bukkit.conversations.ConversationAbandonedEvent;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.*;
 import org.bukkit.entity.memory.MemoryKey;
+import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.*;
 import org.bukkit.inventory.meta.PotionMeta;
@@ -38,7 +40,7 @@ import org.bukkit.util.Vector;
 import java.net.InetSocketAddress;
 import java.util.*;
 
-public class Specials {
+public class Specials implements Listener {
     public ItemStack doWaterBucket() {
         var waterBucket = new ItemStack(Material.WATER_BUCKET, 1);
         return waterBucket;
@@ -61,19 +63,12 @@ public class Specials {
         return lavaBucket;
     }
 
-    public ItemStack doPotionOfLeaping(Player player) {
+    public ItemStack doPotionOfLeaping(PlayerItemConsumeEvent playerItemConsumeEvent) {
         var potionOfLeaping = new ItemStack(Material.POTION, 1);
-//      var itemMeta = potionOfLeaping.getItemMeta();
-//        itemMeta.setDisplayName("Potion of leaping");
-//        AttributeModifier atMo = new AttributeModifier("POL", 1000000, AttributeModifier.Operation.ADD_NUMBER);
-//        itemMeta.addAttributeModifier(Attribute.);
-//        itemMeta.se
-        PotionMeta meta = (PotionMeta)potionOfLeaping.getItemMeta();
-
-        meta.setBasePotionData(new PotionData(PotionType.INSTANT_HEAL/*, false, true*/));
-        potionOfLeaping.setItemMeta(meta);
-
-//        player.getInventory().addItem(potionOfLeaping);
+        var itemMeta = potionOfLeaping.getItemMeta();
+        itemMeta.setDisplayName("Potion of leaping");
+        potionOfLeaping.setItemMeta(itemMeta);
+        playerItemConsumeEvent.getPlayer().getPotionEffect(PotionEffectType.JUMP);
         return potionOfLeaping;
     }
 }

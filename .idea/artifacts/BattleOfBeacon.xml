@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BattleOfBeacon">
+    <output-path>$PROJECT_DIR$/out/artifacts/BattleOfBeacon</output-path>
+    <root id="archive" name="BattleOfBeacon.jar">
+      <element id="module-output" name="BattleOfBeacons" />
+      <element id="file-copy" path="$PROJECT_DIR$/res/plugin.yml" />
+    </root>
+  </artifact>
+</component>

@@ -12,10 +12,11 @@ public class Main extends JavaPlugin {
         var world = getServer().getWorlds().get(0);
         var serverConnect = new ConnectAndRespawn();
 
-        //Listeners
+//        Listeners
         getServer().getPluginManager().registerEvents(serverConnect, this);
         getServer().getPluginManager().registerEvents(new PortionOfLeaping(), this);
-//        comands
+
+//        Commands
         getCommand("traderspawn").setExecutor(new Trader());
     }
 }

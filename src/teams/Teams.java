@@ -1,8 +1,6 @@
 package teams;
 
 import org.bukkit.entity.Player;
-import org.w3c.dom.stylesheets.LinkStyle;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

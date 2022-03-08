@@ -2,7 +2,6 @@ package teleporters;
 
 import org.bukkit.Location;
 import org.bukkit.plugin.Plugin;
-
 import java.util.List;
 
 public abstract class Teleporter {

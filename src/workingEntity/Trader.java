@@ -8,7 +8,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.WanderingTrader;
-import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.MerchantRecipe;
 import org.bukkit.potion.PotionEffect;
@@ -19,10 +18,7 @@ import things.Swords;
 import things.Tools;
 
 public class Trader implements CommandExecutor {
-    //    Armor armor = new Armor();
-//    Specials specials = new Specials();
-//    Swords swords = new Swords();
-//    Tools tools = new Tools();
+
     public static final String TRADER_NAME = "TRADER";
     private final Armor armor;
     private final Specials specials;
@@ -57,11 +53,11 @@ public class Trader implements CommandExecutor {
         MerchantRecipe trainingLeggins = new MerchantRecipe(specials.doWaterBucket(), 999);
         trainingLeggins.addIngredient(new ItemStack(Material.GOLD_INGOT, 6));
 
-        MerchantRecipe potion = new MerchantRecipe(specials.doPotionOfLeaping(pla), 999);
+        MerchantRecipe potion = new MerchantRecipe(specials.doPotionOfLeaping(), 999);
         trainingLeggins.addIngredient(new ItemStack(Material.GOLD_INGOT, 6));
 
         trader.setRecipes(Lists.newArrayList
-                (trainingSword, trainingHelmet, trainingChestPlate, trainingLeggins));
+                (trainingSword, trainingHelmet, trainingChestPlate, trainingLeggins, potion));
 
         return true;
     }

@@ -15,6 +15,7 @@ import org.bukkit.conversations.ConversationAbandonedEvent;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.*;
 import org.bukkit.entity.memory.MemoryKey;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
@@ -40,7 +41,8 @@ import org.bukkit.util.Vector;
 import java.net.InetSocketAddress;
 import java.util.*;
 
-public class Specials implements Listener {
+public class Specials {
+
     public ItemStack doWaterBucket() {
         var waterBucket = new ItemStack(Material.WATER_BUCKET, 1);
         return waterBucket;
@@ -63,12 +65,11 @@ public class Specials implements Listener {
         return lavaBucket;
     }
 
-    public ItemStack doPotionOfLeaping(PlayerItemConsumeEvent playerItemConsumeEvent) {
+    public ItemStack doPotionOfLeaping() {
         var potionOfLeaping = new ItemStack(Material.POTION, 1);
         var itemMeta = potionOfLeaping.getItemMeta();
-        itemMeta.setDisplayName("Potion of leaping");
+        itemMeta.setDisplayName(SpecialsItemsNames.POTION_NAME);
         potionOfLeaping.setItemMeta(itemMeta);
-        playerItemConsumeEvent.getPlayer().getPotionEffect(PotionEffectType.JUMP);
         return potionOfLeaping;
     }
 }

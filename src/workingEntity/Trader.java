@@ -53,11 +53,15 @@ public class Trader implements CommandExecutor {
         MerchantRecipe trainingLeggins = new MerchantRecipe(specials.doWaterBucket(), 999);
         trainingLeggins.addIngredient(new ItemStack(Material.GOLD_INGOT, 6));
 
-        MerchantRecipe potion = new MerchantRecipe(specials.doPotionOfLeaping(), 999);
-        trainingLeggins.addIngredient(new ItemStack(Material.GOLD_INGOT, 6));
+        MerchantRecipe potLeaping = new MerchantRecipe(specials.doPotionOfLeaping(), 999);
+        potLeaping.addIngredient(new ItemStack(Material.GOLD_INGOT, 6));
+
+        MerchantRecipe potStrenght = new MerchantRecipe(specials.doPotionOfStrength(), 999);
+        potStrenght.addIngredient(new ItemStack(Material.GOLD_INGOT, 6));
+
 
         trader.setRecipes(Lists.newArrayList
-                (trainingSword, trainingHelmet, trainingChestPlate, trainingLeggins, potion));
+                (trainingSword, trainingHelmet, trainingChestPlate, trainingLeggins, potLeaping, potStrenght));
 
         return true;
     }

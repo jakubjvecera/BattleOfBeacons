@@ -7,12 +7,12 @@ import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class PortionOfLeaping implements Listener {
+public class PotionOfStrength implements Listener {
 
     @EventHandler
-    public void doPotionOfLeaping(PlayerItemConsumeEvent playerItemConsumeEvent) {
+    public void doPotionOfStrength(PlayerItemConsumeEvent playerItemConsumeEvent) {
         Player player = playerItemConsumeEvent.getPlayer();
-        player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 1200, 10, true, true, true));
+        player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 1200, 2, true, true, true));
 
     }
 }

@@ -35,11 +35,4 @@ public class Specials {
         potionOfLeaping.setItemMeta(itemMeta);
         return potionOfLeaping;
     }
-    public ItemStack doPotionOfStrength() {
-        var PotionOfStrength = new ItemStack(Material.POTION, 1);
-        var itemMeta = PotionOfStrength.getItemMeta();
-        itemMeta.setDisplayName(SpecialsItemsNames.POTION_NAME_STRENGTH);
-        PotionOfStrength.setItemMeta(itemMeta);
-        return PotionOfStrength;
-    }
 }

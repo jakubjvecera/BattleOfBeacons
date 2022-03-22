@@ -7,7 +7,7 @@ import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class PortionOfLeaping implements Listener {
+public class PotionOfLeaping implements Listener {
 
     @EventHandler
     public void doPotionOfLeaping(PlayerItemConsumeEvent playerItemConsumeEvent) {

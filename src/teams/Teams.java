@@ -17,7 +17,7 @@ public class Teams {
     }
 
     public Team getTeam(int i) {
-        return teams.get(i);
+        return teams.get(i  ,éééééééééééé);
     }
 
     public void addBattleTeams(List<Player> hraci, int numberTeams) {

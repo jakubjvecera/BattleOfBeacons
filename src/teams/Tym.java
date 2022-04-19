@@ -10,20 +10,20 @@ public final class Tym {
     private final Set<Player> hraci = new HashSet<>();
     private final JmenoTymu jmenoTymu;
     public Integer pocetKillu = 0;
-    private final ArmorFactory armor;
-    private final Weapons weapons;
+//    private final ArmorFactory armor;
+//    private final Weapons weapons;
 
     private final Location spawnPoint;
 
     public Tym(JmenoTymu jmenoTymu, Location mistoVArene) {
         this.jmenoTymu = jmenoTymu;
-        armor = new ArmorFactory(jmenoTymu.getColor());
+//        armor = new ArmorFactory(jmenoTymu.getColor());
         this.spawnPoint = mistoVArene;
-        weapons = new Weapons();
+//        weapons = new Weapons();
     }
 
     public void pridej(Player player) {
-        vybavHrace(player);
+//        vybavHrace(player);
         hraci.add(player);
     }
 
@@ -48,18 +48,18 @@ public final class Tym {
         return jmenoTymu;
     }
 
-    private void vybavHrace(Player hrac) {
-        var inventory = hrac.getInventory();
-        inventory.clear();
-        inventory.setChestplate(armor.chestplate());
-        inventory.setBoots(armor.boots());
-        inventory.setLeggings(armor.leggins());
-        inventory.setHelmet(armor.helmet());
-        inventory.setItemInMainHand(weapons.sword());
-        inventory.setItemInOffHand(weapons.shield());
-        inventory.addItem(weapons.bow());
-        inventory.addItem(weapons.arrow());
-    }
+//    private void vybavHrace(Player hrac) {
+//        var inventory = hrac.getInventory();
+//        inventory.clear();
+//        inventory.setChestplate(armor.chestplate());
+//        inventory.setBoots(armor.boots());
+//        inventory.setLeggings(armor.leggins());
+//        inventory.setHelmet(armor.helmet());
+//        inventory.setItemInMainHand(weapons.sword());
+//        inventory.setItemInOffHand(weapons.shield());
+//        inventory.addItem(weapons.bow());
+//        inventory.addItem(weapons.arrow());
+//    }
 
     private static int convertSecToTicks(int sec) {
         return sec * 20;

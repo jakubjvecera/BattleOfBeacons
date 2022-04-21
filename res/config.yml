@@ -4,16 +4,7 @@
 # LobbyLocationEndCorner: horni roh lobby
 # oba tyto  rohy urcuji uhlopricku mistnosti od podlahy ke stropu napric mistnosti
 
-LobbyLocationStartCorner:
-  ==: org.bukkit.Location
-  world: world
-  x: 0
-  y: 118
-  z: 0
-  pitch: 0
-  yaw: 0
-
-LobbyLocationEndCorner:
+LobbyLocation:
   ==: org.bukkit.Location
   world: world
   x: 0

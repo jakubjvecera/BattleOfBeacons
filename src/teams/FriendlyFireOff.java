@@ -21,7 +21,7 @@ public class FriendlyFireOff implements Listener {
         Entity hurt = event.getEntity();
         if (!(hurt instanceof Player)) return;
         for (Team team : teams.getTeams()) {
-            if (team.inTeamP((Player) attacker) && team.inTeamP((Player) hurt)) {
+            if (team.inTeam((Player) attacker) && team.inTeam((Player) hurt)) {
                 event.setCancelled(true);
                 break;
             }

@@ -6,13 +6,20 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import things.SpecialsItemsNames;
 
 public class PotionOfLeaping implements Listener {
 
     @EventHandler
-    public void doPotionOfLeaping(PlayerItemConsumeEvent playerItemConsumeEvent) {
-        Player player = playerItemConsumeEvent.getPlayer();
-        player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 1200, 10, true, true, true));
+    public void doPotionOfLeaping(PlayerItemConsumeEvent event) {
+        Player player = event.getPlayer();
+        var itemMeta = event.getItem().getItemMeta();
+        if(itemMeta == null) return;
+        if (SpecialsItemsNames.POTION_NAME_LEAPING.equals(itemMeta.getDisplayName())) {
+            player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 1200, 10, true, true, true));
+
+        }
+
 
     }
 }

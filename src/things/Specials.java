@@ -31,7 +31,7 @@ public class Specials {
     public ItemStack doPotionOfLeaping() {
         var potionOfLeaping = new ItemStack(Material.POTION, 1);
         var itemMeta = potionOfLeaping.getItemMeta();
-        itemMeta.setDisplayName(SpecialsItemsNames.POTION_NAME);
+        itemMeta.setDisplayName(SpecialsItemsNames.POTION_NAME_LEAPING);
         potionOfLeaping.setItemMeta(itemMeta);
         return potionOfLeaping;
     }

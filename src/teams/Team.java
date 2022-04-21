@@ -1,22 +1,34 @@
 package teams;
 
+import org.bukkit.Location;
+import org.bukkit.craftbukkit.libs.it.unimi.dsi.fastutil.Hash;
 import org.bukkit.entity.Player;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public final class Team {
-    private Set<Player> players = new HashSet<>();
+    private final Set<Player> players = new HashSet<>();
+    private final Location spawnPoint;
 
-    public void addP(Player player) {
+
+    public Team(Location spawnPoint) {
+        this.spawnPoint = spawnPoint;
+    }
+
+    public void add(Player player) {
         players.add(player);
     }
 
-    public boolean inTeamP(Player player) {
+    public boolean inTeam(Player player) {
         return players.contains(player);
     }
 
-    public Set<Player> getPs() {
+    public Set<Player> getPlayers() {
         return new HashSet<>(players);
+    }
+
+    public Location getSpawnPoint() {
+        return spawnPoint;
     }
 }

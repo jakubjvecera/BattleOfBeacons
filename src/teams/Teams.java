@@ -1,12 +1,13 @@
 package teams;
 
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class Teams {
-    private List<Team> teams = new ArrayList<>();
+    private final List<Team> teams = new ArrayList<>();
 
     public List<Team> getTeams() {
         return new ArrayList<>(teams);
@@ -20,28 +21,30 @@ public class Teams {
         return teams.get(i);
     }
 
-    public void addBattleTeams(List<Player> hraci, int numberTeams) {
+    public void createTeams(List<Player> players, List<Location> spawnPoints) {
         teams.clear();
-        for (int i = 0; i < numberTeams; i++) {
-            teams.add(new Team());
+        int teamCount = spawnPoints.size();
+        for (Location spawnPoint : spawnPoints) {
+            teams.add(new Team(spawnPoint));
         }
-        hraci = mixP(hraci);
+        mix(players);
         int i = 0;
-        for (Player player : hraci) {
-            teams.get(i++).addP(player);
-            if (i >= numberTeams) i = 0;
+        for (Player player : players) {
+            teams.get(i++).add(player);
+            if (i >= teamCount) i = 0;
         }
     }
 
-    private List<Player> mixP(List<Player> players) {
-        Random rand = new Random(System.nanoTime());
+    private void mix(List<Player> players) {
+        Random rand = new Random();
         for (int i = 0; i < 100; i++) {
-            int firstIndex = rand.nextInt(players.size());
-            int secondIndex = rand.nextInt(players.size());
-            Player player = players.get(firstIndex);
-            players.set(firstIndex, players.get(secondIndex));
-            players.set(secondIndex, player);
+            int idx1 = rand.nextInt(players.size());
+            int idx2 = rand.nextInt(players.size());
+            Player player = players.get(idx1);
+            players.set(idx1, players.get(idx2));
+            players.set(idx2, player);
         }
-        return players;
     }
+
+
 }

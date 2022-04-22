@@ -1,10 +1,12 @@
-package teams;
+package listeners;
 
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import teams.Team;
+import teams.Teams;
 
 public class FriendlyFireOff implements Listener {
 

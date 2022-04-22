@@ -4,6 +4,7 @@
     <root id="archive" name="BattleOfBeacon.jar">
       <element id="module-output" name="BattleOfBeacons" />
       <element id="file-copy" path="$PROJECT_DIR$/res/plugin.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/res/config.yml" />
     </root>
   </artifact>
 </component>

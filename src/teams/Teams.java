@@ -46,5 +46,8 @@ public class Teams {
         }
     }
 
+    public void removeTeam(Team team) {
+        teams.remove(team);
+    }
 
 }

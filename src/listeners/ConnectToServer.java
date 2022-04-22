@@ -1,4 +1,4 @@
-package listners;
+package listeners;
 
 import lobby.Lobby;
 import org.bukkit.GameMode;

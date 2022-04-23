@@ -18,6 +18,7 @@ public class StartGame implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
+        teams.createTeams();
         //create beacon for every team
         for (var team : teams.getTeams()) {
             var spawnLocation = team.getSpawnPoint();

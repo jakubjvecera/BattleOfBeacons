@@ -14,8 +14,8 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         this.saveDefaultConfig();
         Lobby lobby = new LobbyCreator(this).createLobby();
-        Teams teams = new Teams();
-        TeleportToGame teleportToGame = new TeleportToGame(teams, this);
+        Teams teams = new Teams(this);
+        TeleportToGame teleportToGame = new TeleportToGame(teams);
 
 //        Listeners
         getServer().getPluginManager().registerEvents(new PotionOfLeaping(), this);

@@ -17,7 +17,7 @@ public class ConnectToServer implements Listener {
     @EventHandler
     public void onConnect(PlayerJoinEvent playerJoinEvent) {
         var player  = playerJoinEvent.getPlayer();
-        player.setGameMode(GameMode.ADVENTURE);
+        player.setGameMode(GameMode.SURVIVAL);
         player.teleport(lobby.getLocation());
     }
 }

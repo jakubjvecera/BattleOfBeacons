@@ -24,6 +24,7 @@ public class EndGame implements Listener {
         var destroyedBlockLocation = event.getBlock().getLocation();
         for (var team : teams.getTeams()) {
             if (team.getSpawnPoint().equals(destroyedBlockLocation)) {
+                event.setDropItems(false);
                 //this team lost
                 endTeam(team, "You lost");
                 teams.removeTeam(team);
